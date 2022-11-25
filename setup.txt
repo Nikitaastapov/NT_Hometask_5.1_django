@@ -1,0 +1,12 @@
+1)pip install -r requirements.txt - установка бибилиотек из файла requirements.txt
+2)в папке проекта заходим в файл settings.py раздел INSTALLED_APPS и прописываем созданные приложения
+7) python3 manage.py migrate - создание структуры базы данных
+8) python3 manage.py runserver - запуск сервера
+9) python manage.py makemigrations - отправка изменений + python manage.py migrate
+10) python manage.py shell - спец интерпретатор django
+запись в БД
+from main.models import Products -импортируем класс Product из файла models
+prod1 = Products(name = "Apple Iphone 14", description = "mobile phone", price = 120000) - создали экземпляр класса и заполнили БД
+prod1.save() - сохранили запись в БД
+или
+Products.objects.create(name = "Apple Iphone 13", description = "mobile phone", price = 100000)
